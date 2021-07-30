@@ -1,7 +1,11 @@
 const express = require('express')
 const app = express();
-const router = require('./modules/controllers/controller')
-const myLogger = require('./modules/middlewares/middleware')
+const router = require('./src/routes/studentRoutes')
+const myLogger = require('./src/middlewares/middleware')
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use(myLogger)
 
