@@ -6,13 +6,17 @@ const showKittySchema = () =>{
         name: String
     });
 
-    const Kitten = mongoose.model('Kitten',kittySchema);
+    const Kitten = mongoose.model('Kitten',kittySchema); // Collection
 
-    const Mitzi = new Kitten({name:"Katie"})
-    Mitzi.save();
-    const Fluffy = new Kitten({name: "Fluffy"})
-    Fluffy.save();
-    return {kittySchema,Kitten,Fluffy,Mitzi}
+    // Kitten.find((err,data)=>
+    //     console.log(data)
+    // )
+
+    const data = await Kitten.find().exec().then({name:"Fluffy"}, (err,kittens)=>{
+        console.log(kittens)
+    }); //- Promise Async Await method with .then
+
+    return {kittySchema,Kitten,data}
 }
 
 
