@@ -4,6 +4,9 @@ const studentCtrl = require('../controllers/studentCtrl');
 
 router.get('/test',studentCtrl.getStudent)
 router.post('/test',studentCtrl.addStudent)
+router.put('/test',studentCtrl.updateStudent)
+router.delete('/test',studentCtrl.deleteStudent)
+
 // router.put('/test',studentCtrl.updateStudent)
 
 router.get('/yoni',(req,res)=>{
