@@ -3,6 +3,9 @@ const app = express();
 const router = require('./src/routes/studentRoutes')
 const myLogger = require('./src/middlewares/middleware')
 const bodyParser = require("body-parser");
+const mongoDB = require('./src/database/mongoDB')
+
+
 app.set('view engine', 'ejs');
 app.set('views', __dirname);
 
